@@ -12,6 +12,4 @@ var host = new HostBuilder()
 
 host.Run();
 
-public partial class Program
-{
-}
+public partial class Program { }
