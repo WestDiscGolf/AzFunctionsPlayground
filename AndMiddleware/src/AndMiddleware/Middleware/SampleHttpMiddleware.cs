@@ -2,6 +2,8 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Middleware;
 using Microsoft.Extensions.Logging;
 
+namespace AndMiddleware.Middleware;
+
 public class SampleHttpMiddleware : IFunctionsWorkerMiddleware
 {
     public Task Invoke(FunctionContext context, FunctionExecutionDelegate next)
