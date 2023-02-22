@@ -2,7 +2,7 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Middleware;
 using Microsoft.Extensions.Logging;
 
-namespace AndMiddleware.Middleware;
+namespace AndMiddleware.Middleware1;
 
 public class ExceptionLoggingMiddleware : IFunctionsWorkerMiddleware
 {
