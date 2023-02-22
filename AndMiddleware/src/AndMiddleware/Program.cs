@@ -12,6 +12,7 @@ var host = new HostBuilder()
 
         app.UseMiddleware<SampleHttpMiddleware2>();
         app.UseMiddleware<SampleTimerMiddleware2>();
+        app.UseMiddleware<AddHeaderMiddleware>();
 
     })
     .Build();

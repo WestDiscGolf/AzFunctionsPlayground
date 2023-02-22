@@ -10,13 +10,9 @@ public abstract class TriggerMiddlewareBase : IFunctionsWorkerMiddleware
 
     public async Task Invoke(FunctionContext context, FunctionExecutionDelegate next)
     {
-        if (context.IsTriggeredBy(TriggerType))
-        {
-            await InnerInvoke(context);
-        }
-
-        await next(context);
+        // always run the next middleware if not applicable to the current trigger type.
+        await (context.IsTriggeredBy(TriggerType) ? InnerInvoke(context, next) : next(context));
     }
 
-    protected abstract Task InnerInvoke(FunctionContext context);
+    protected abstract Task InnerInvoke(FunctionContext context, FunctionExecutionDelegate next);
 }
