@@ -27,3 +27,20 @@ public class HttpFunction
         return response;
     }
 }
+
+public class HttpFunction2
+{
+    [Function("HttpFunction2")]
+    public async Task<Payload> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req, [] Payload payload)
+    {
+        payload.Name += ": Added in the function";
+        return payload;
+    }
+}
+
+public class Payload
+{
+    public string Name { get; set; }
+
+    public Guid TenantId { get; set; }
+}
